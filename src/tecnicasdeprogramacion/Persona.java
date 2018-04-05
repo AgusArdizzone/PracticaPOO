@@ -5,53 +5,105 @@
  */
 package tecnicasdeprogramacion;
 
+import java.util.Random;
+
 /**
  *
  * @author utku34
  */
-public class Persona {
+public class Persona extends MetodosSteve {
 
     private String name;
     private String lastName;
     private int dni;
-    private String resident;
-    private String profession;
+    private Mascota mascota;
+    
+    public Persona() {
+    }
+    
     
     public Persona(String name) {
-       this.name=name;
-       
-        
+       this.name= verificarNombre(name);
     }
 
+    public Persona(String name, String lastName, int dni, Mascota mascota) {
+        this.name =  verificarNombre(name);
+        this.lastName =  verificarNombre(lastName);
+        this.dni = dni;
+        this.mascota = mascota;
+    }
+    
+    //////Gets & Sets//////
+    
     public String getName() {
         return name;
     }
-    
-  public void verificarNombre(String name){
-      this.name=name;
-            
-        }
-    
-     public int nombreCorrecto(String name){
-        int nombreok=1;
-         for (int i = 0; i <name.length(); i++) {
-             if(name.charAt(i)>=48 && name.charAt(i)<=57){
-                 nombreok=0;
-             
-            
-             }
-             if (nombreok ==1){
-                 this.name=name;
-             }else{
-                 this.name=null;
-             }
-             
-         }
-         
-     return nombreok;    
-     }
-     
+
+    public String getLastName() {
+        return lastName;
     }
+
+    public int getDni() {
+        return dni;
+    }
+
+    public Mascota getMascota() {
+        return mascota;
+    }
+    
+    public void setName(String name) {
+        this.name = verificarNombre(name);
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = verificarNombre(lastName);
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+
+    public void setMascota(Mascota mascota) {
+        this.mascota = mascota;
+    }
+    ////////////
+    
+    //////Metodos//////
+    public void pasearMascota(){
+        imprimir(this.name+" esta Paseando a "+getMascota().getNombre());
+    }
+    
+    public void sentadoMascota(){
+        Random rand = new Random();
+        int aleatorio = rand.nextInt(2);
+        imprimir(aleatorio);
+        imprimir (getMascota().getNombre()+", sentado!");
+        if(aleatorio==0){
+            imprimir(getMascota().getNombre()+" mira a "+ this.name+" desconcertado");
+        }else{
+            imprimir(getMascota().getNombre()+" se sento");
+        }
+    }
+    
+    
+    
+    //////OTROS//////
+    private String verificarNombre(String name){
+        for (int i = 0; i <name.length(); i++) {
+            if(name.charAt(i)>=48 && name.charAt(i)<=57){
+            name = null;
+            return name;
+            }
+        }
+        
+        if (name.charAt(0)>=97 && name.charAt(0)<=122){
+            name = name.substring(0, 1).toUpperCase() + name.substring(1);
+        }
+        return name;
+    }
+        
+} 
+
     
     
 
