@@ -5,6 +5,9 @@
  */
 package tecnicasdeprogramacion;
 
+import java.util.Random;
+import static tecnicasdeprogramacion.MetodosSteve.imprimir;
+
 /**
  *
  * @author utku34
@@ -40,6 +43,14 @@ public class Mascota extends MetodosSteve {
         this.nombre = Nombre;
     }
     
-    
+    public void decisionSentado(String dueno){
+        Random rand = new Random();
+        int aleatorio = rand.nextInt(2);
+        if(aleatorio==0){
+            imprimir(this.nombre+" mira a "+ dueno+" desconcertado");
+        }else{
+            imprimir(this.nombre+" se sento");
+        }
+    }
     
 }

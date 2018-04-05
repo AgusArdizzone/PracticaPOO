@@ -74,17 +74,16 @@ public class Persona extends MetodosSteve {
     }
     
     public void sentadoMascota(){
-        Random rand = new Random();
-        int aleatorio = rand.nextInt(2);
-        imprimir(aleatorio);
+        
         imprimir (getMascota().getNombre()+", sentado!");
-        if(aleatorio==0){
-            imprimir(getMascota().getNombre()+" mira a "+ this.name+" desconcertado");
-        }else{
-            imprimir(getMascota().getNombre()+" se sento");
-        }
+        getMascota().decisionSentado(this.name);
     }
     
+    public int elegirNumero(int maxNum){
+        Random rand = new Random();
+        int numElegido = rand.nextInt(maxNum)+1;
+        return numElegido;
+    }
     
     
     //////OTROS//////
