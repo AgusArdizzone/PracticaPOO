@@ -13,12 +13,13 @@ public class Principal extends MetodosSteve{
         Random rand = new Random();
         int numElegido = rand.nextInt(50)+1;
         boolean winner  = true;
-       //persona1.setMascota(mascota1);
+        int intentos = 0;
+       persona1.setMascota(mascota1);
        //persona1.pasearMascota();
-       //persona1.sentadoMascota();
+       persona1.sentadoMascota();
         
         
-        imprimir("El numero a adivinar es: "+numElegido);
+        /*imprimir("El numero a adivinar es: "+numElegido);
         imprimir (persona1.getName()+" y "+ persona2.getName()+" tienen que adivinar el numero");
         imprimir ("Eligan un numero entre 0 y 50");
         
@@ -34,7 +35,8 @@ public class Principal extends MetodosSteve{
                 imprimir("El ganador es: "+ persona1.getName()+"!");
                 winner= false;
             }
-        }
+        }*/
+        
        
        
     }

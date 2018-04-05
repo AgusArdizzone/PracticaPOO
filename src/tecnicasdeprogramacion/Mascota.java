@@ -51,6 +51,7 @@ public class Mascota extends MetodosSteve {
         }else{
             imprimir(this.nombre+" se sento");
         }
+        
     }
     
 }

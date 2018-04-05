@@ -74,8 +74,7 @@ public class Persona extends MetodosSteve {
     }
     
     public void sentadoMascota(){
-        
-        imprimir (getMascota().getNombre()+", sentado!");
+        imprimir(getMascota().getNombre()+", sentado!");
         getMascota().decisionSentado(this.name);
     }
     
